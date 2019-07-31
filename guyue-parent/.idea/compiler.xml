@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="guyue-common" />
+        <module name="guyue-manager-pojo" />
+        <module name="guyue-manager-dao" />
+        <module name="guyue-manager-service" />
+        <module name="guyue-manager-web" />
+        <module name="guyue-manager-interface" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

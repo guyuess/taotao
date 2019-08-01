@@ -3,6 +3,7 @@ package com.guyue.controller;
 import com.guyue.pojo.TbItem;
 import com.guyue.service.ItemService;
 import com.taotao.common.pojo.EasyUIDataGridResult;
+import com.taotao.common.pojo.TaotaoResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,11 +33,10 @@ public class ItemController {
     //
     @RequestMapping("/rest/item/delete")
     @ResponseBody
-    public void deleteItemById(EasyUIDataGridResult result){
+    public TaotaoResult deleteItemById(EasyUIDataGridResult result){
         List<Long> ids = result.getIds();
-        for (long id:ids) {
-            itemService.deleteItemById(id);
-        }
+        TaotaoResult taotaoResult = itemService.deleteItemById(ids);
+        return taotaoResult;
     }
     @RequestMapping("/rest/item/instock")
     @ResponseBody
@@ -53,9 +53,7 @@ public class ItemController {
         for (long id:ids) {
             itemService.updateItemByIdOrStatusGrounding(id);
         }
-        TbItem tbItem = new TbItem();
-        tbItem.setStatus((byte) 200);
-        return tbItem;
+        return null;
     }
 
     /*@RequestMapping("/rest/item/instock")

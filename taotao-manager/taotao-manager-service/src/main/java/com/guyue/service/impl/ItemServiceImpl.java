@@ -6,6 +6,7 @@ import com.guyue.mapper.TbItemMapper;
 import com.guyue.pojo.TbItem;
 import com.guyue.service.ItemService;
 import com.taotao.common.pojo.EasyUIDataGridResult;
+import com.taotao.common.pojo.TaotaoResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,8 +38,12 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void deleteItemById(long id) {
-        itemMapper.deleteItemById(id);
+    public TaotaoResult deleteItemById(List<Long> ids) {
+        int i = itemMapper.deleteItemById(ids);
+        if(i != 0){
+            return TaotaoResult.ok();
+        }
+        return null;
     }
 
     @Override

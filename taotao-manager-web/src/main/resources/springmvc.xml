@@ -32,4 +32,5 @@
     <dubbo:protocol name="dubbo" port="20880" />
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:reference interface="com.guyue.service.ItemService" id="itemServiceImpl" />
+    <dubbo:reference interface="com.guyue.service.ItemCatService" id="itemCatServiceImpl" />
 </beans>

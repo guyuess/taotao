@@ -13,9 +13,9 @@ public interface TbItemMapper {
 
     @Select("select * from tbitem")
     List<TbItem> queryItemList();
-
-    @Delete("delete from tbitem where id = #{id}")
-    void deleteItemById(Long id);
+    //
+    @Delete("<script> delete from tbitem where id in <foreach collection='list' open='(' item='id' separator=',' close=')'> #{id}</foreach></script>")
+    int deleteItemById(List<Long> ids);
 
     @Update("update tbitem set status = 2 where id = #{id}")
     void updateItemByIdOrStatusUndercarriage(long id);

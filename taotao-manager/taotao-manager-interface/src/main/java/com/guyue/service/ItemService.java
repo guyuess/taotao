@@ -1,8 +1,10 @@
 package com.guyue.service;
 
 import com.guyue.pojo.TbItem;
+import com.guyue.pojo.TbItemDesc;
 import com.taotao.common.pojo.EasyUIDataGridResult;
 import com.taotao.common.pojo.TaotaoResult;
+import com.taotao.common.pojo.UpdateItem;
 
 import java.util.List;
 
@@ -13,9 +15,13 @@ public interface ItemService {
 
     TaotaoResult deleteItemById(List<Long> ids);
 
-    void updateItemByIdOrStatusUndercarriage(long id);
+    TaotaoResult updateItemByIdOrStatusUndercarriage(List<Long> ids);
 
-    void updateItemByIdOrStatusGrounding(long id);
+    TaotaoResult updateItemByIdOrStatusGrounding(List<Long> ids);
 
-    TbItem updateItemByIdOrUndercarriage(List<Long> ids);
+    TaotaoResult addItem(TbItem tbItem,String desc);
+
+    TaotaoResult queryItemDescByItemId(Long itemId);
+
+    TaotaoResult updateItemAndItemDesc(TbItem tbItem, String desc);
 }

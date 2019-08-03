@@ -8,4 +8,6 @@ import java.util.List;
 public interface TbItemCatMapper {
     @Select("select * from tbitemcat where parentId = #{id}")
     List<TbItemCat> queryItemCatByParentId(Long id);
+    @Select("select * from tbitemcat where id = #{cid}")
+    TbItemCat queryItemCatById(Long cid);
 }

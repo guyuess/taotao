@@ -71,7 +71,7 @@ var TT = TAOTAO = {
     			<div class="pics">\
         			<ul></ul>\
         		</div>');
-    		// 回显图片
+            // 回显图片
         	if(data && data.pics){
         		var imgs = data.pics.split(",");
         		for(var i in imgs){

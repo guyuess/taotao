@@ -3,40 +3,25 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>taotao-parent</artifactId>
+        <artifactId>taotao-content</artifactId>
         <groupId>com.taotao</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../taotao-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>taotao-portal-web</artifactId>
+    <artifactId>taotao-content-service</artifactId>
+
     <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>com.taotao</groupId>
-            <artifactId>taotao-content-interface</artifactId>
+            <artifactId>taotao-manager-dao</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.taotao</groupId>
-            <artifactId>taotao-common</artifactId>
+            <artifactId>taotao-content-interface</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <!-- JSP相关 -->
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jsp-api</artifactId>
-            <scope>provided</scope>
         </dependency>
         <!-- spring的依赖 -->
         <!-- Spring -->
@@ -91,26 +76,11 @@
             <groupId>com.github.sgroschupf</groupId>
             <artifactId>zkclient</artifactId>
         </dependency>
+        <!-- Redis客户端 -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>compile</scope>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
         </dependency>
-
     </dependencies>
-    <!-- 配置tomcat插件 -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <configuration>
-                    <port>8082</port>
-                    <path>/</path>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
 
 </project>

@@ -40,9 +40,11 @@
     <dubbo:protocol name="dubbo" port="20880" />
     <!-- 声明需要暴露的服务接口 -->
 <!--    引入商品服务-->
-    <dubbo:reference interface="com.guyue.service.ItemService" id="itemServiceImpl" />
+    <dubbo:reference interface="com.guyue.service.ItemService" id="itemService" />
 <!--    引入商品分类服务-->
-    <dubbo:reference interface="com.guyue.service.ItemCatService" id="itemCatServiceImpl" />
+    <dubbo:reference interface="com.guyue.service.ItemCatService" id="itemCatService" />
 <!--    引入商品图片服务-->
-    <dubbo:reference interface="com.guyue.service.PictureService" id="pictureServiceImpl" />
+    <dubbo:reference interface="com.guyue.service.PictureService" id="pictureService" />
+    <dubbo:reference interface="com.guyue.content.service.ContentCategoryService" id="contentCategoryService" />
+    <dubbo:reference interface="com.guyue.content.service.ContentService" id="contentService" />
 </beans>

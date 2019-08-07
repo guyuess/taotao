@@ -72,6 +72,7 @@
     </aop:config>
     <bean id="jedisPool" class="redis.clients.jedis.JedisPool">
         <constructor-arg name="host" value="192.168.65.112"></constructor-arg>
+        <!--<constructor-arg name="host" value="101.200.150.135"></constructor-arg>-->
         <constructor-arg name="port" value="6379"></constructor-arg>
     </bean>
 
@@ -79,7 +80,7 @@
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="taotao-content-service" />
     <dubbo:registry protocol="zookeeper"
-                    address="192.168.65.111:2181" />
+                    address="172.24.10.119:2181" /><!--101.200.150.135   192.168.65.111 -->
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20881" />
     <!-- 声明需要暴露的服务接口 -->

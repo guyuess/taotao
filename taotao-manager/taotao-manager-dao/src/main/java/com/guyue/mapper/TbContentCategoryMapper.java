@@ -2,10 +2,8 @@ package com.guyue.mapper;
 
 
 import com.guyue.pojo.TbContentCategory;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import jdk.nashorn.internal.objects.annotations.Optimistic;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -14,6 +12,7 @@ public interface TbContentCategoryMapper {
     List<TbContentCategory> findContentCatgoryAll(Long parentId);
     @Insert("insert into tbcontentcategory(parentId, name, status, sortOrder, isParent, created, updated) " +
             "value (#{parentId},#{name},#{status},#{sortOrder},#{isParent},#{created},#{updated})")
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
     int addContentCategory(TbContentCategory contentCategory);
     @Select("select * from  tbcontentcategory where id = #{id}")
     TbContentCategory findContentCatgoryByParentId(Long parentId);

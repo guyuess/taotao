@@ -10,6 +10,7 @@
         <module>../taotao-manager-web</module>
         <module>../taotao-portal-web</module>
         <module>../taotao-content</module>
+        <module>../taotao-search</module>
     </modules>
     <packaging>pom</packaging>
     <!-- 集中定义依赖版本号 -->
